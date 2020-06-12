@@ -1,7 +1,7 @@
-tremendous.ooo/cron - cron expression verifier
+:alarm_clock: tremendous.ooo/cron - cron expression verifier
 ===
 
-Ever wanted to check for the validity of a cron expression or simply know when the next run is due, but all you had available was curl? With tremendous.ooo/cron, curl is actually all you need.
+Ever wanted to check the validity of a cron expression or simply know when the next run is due, but all you had available was curl? With tremendous.ooo/cron, curl is actually all you need.
 
 ## How to use
 Simply make a POST request to `tremendous.ooo/cron` with the following payload:
