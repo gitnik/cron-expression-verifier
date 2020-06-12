@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>tremenous.ooo - cron expression verifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Use this site to verify the validity of your cron expressions">
+    <meta name="keywords" content="cron,crontag,verify,validate,cron expression">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <style>
+        body {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 10px;
+            font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            color: #444
+        }
+        
+        h1, h2, h3 {
+            line-height: 1.2
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: white;
+                background: #444
+            }
+            
+            a:link { 
+                color: #5bf
+            }
+            
+            a:visited {
+                color: #ccf
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+              How to use
+            </h1>
+            <p class="subtitle">
+              My first website with <strong>Bulma</strong>!
+            </p>
+          </div>
+    </section>  
+    <h2>How to use</h2>
+
+    <b>Request</b>
+    <pre>
+        <code>POST tremendous.ooo/cron</code>
+    </pre>    
+    <pre>    
+        <code>{</code>    
+        <code>    "cron": "0 0 * * WED"</code>
+        <code>}</code>
+    </pre>
+
+    <b>Response</b>
+    <pre>
+        <code>HTTP 200</code>
+    </pre>    
+    <pre>    
+        <code>{</code>    
+        <code>    "nextRun": "2020-06-17T00:00:00.000Z",</code>
+        <code>    "status": 200</code>
+        <code>}</code>
+    </pre>
+
+    <hr>
+
+    Failing to send a valid cron expression will yield the following response:
+
+    <pre>
+        <code>
+            HTTP 400
+
+            {
+                "error": "Invalid cron expression. Check crontab.guru for help.",
+                "status": 400
+            }
+        </code>
+    </pre>
+
+    <p>
+        <i><b>Disclaimer:</b> This project is not associated with crontab.guru</i>
+    </p>
+  </body>
+</html>
