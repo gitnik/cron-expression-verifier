@@ -23,7 +23,7 @@ and it will tell whether the expression is valid and when the next run would be:
 If you supply an invalid or no cron expression, here's what you'll get:
 ```json
 {
-    "error": "Invalid cron expression. Check crontab.guru for help.",
+    "error": "Invalid cron expression.",
     "status": 400
 }
 ```
